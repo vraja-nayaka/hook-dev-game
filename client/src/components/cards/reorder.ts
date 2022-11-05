@@ -23,8 +23,12 @@ export const reorderCardsMap = ({
   source,
   destination,
 }: ReorderQuoteMapArgs): void => {
-  const current: GameCard[] = [...cardHoldersMap[source.droppableId as CardHolder]];
-  const next: GameCard[] = [...cardHoldersMap[destination.droppableId as CardHolder]];
+  const current: GameCard[] = [
+    ...cardHoldersMap[source.droppableId as CardHolder],
+  ];
+  const next: GameCard[] = [
+    ...cardHoldersMap[destination.droppableId as CardHolder],
+  ];
   const target: GameCard = current[source.index];
 
   // moving to same list

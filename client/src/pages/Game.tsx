@@ -2,6 +2,7 @@ import { FC, useEffect } from "react";
 import { CardsApp } from "../components/cards/cards-app";
 import { clearGame, startGame } from "../domen/game";
 import { useCards } from "../services/cards";
+import { sendNewMessage } from "../services/socket-io";
 
 type Props = {};
 

@@ -48,6 +48,17 @@ export const onCardDragStart = (event: unknown) => {
   // activeCardUid.api.set(typeof id === "number" ? id : null);
 };
 
+export const getCardHoldersMap = () => {
+  const cardHoldersMap = {
+    opponentHand: opponentHand.$store.getState(),
+    opponentField: opponentField.$store.getState(),
+    myField: myField.$store.getState(),
+    myHand: myHand.$store.getState(),
+  };
+
+  return cardHoldersMap;
+};
+
 export const useCardHoldersMap = () => {
   const myFieldStore = useStore(myField.$store);
   const myHandStore = useStore(myHand.$store);

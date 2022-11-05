@@ -5,6 +5,7 @@ import { reorderCardsMap } from "./reorder";
 import { useCardHoldersMap } from "../../domen/cards";
 import { CardHolder } from "../../types/card";
 import { GameLayout } from "../layouts/GameLayout";
+import { sendNewMessage } from "../../services/socket-io";
 
 export const CardsApp = () => {
   const { cardHoldersMap } = useCardHoldersMap();
@@ -14,7 +15,13 @@ export const CardsApp = () => {
     if (!result.destination) {
       return;
     }
-
+    sendNewMessage({
+      type: "reorder",
+      data: {
+        source: result.source,
+        destination: result.destination,
+      },
+    });
     reorderCardsMap({
       cardHoldersMap,
       source: result.source,

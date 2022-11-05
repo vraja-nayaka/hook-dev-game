@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import "./services/api/clientApp";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { initSocket } from "./services/socket-io";
 
 import "./index.css";
 
@@ -15,6 +16,8 @@ root.render(
     <App />
   </BrowserRouter>
 );
+
+initSocket();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
